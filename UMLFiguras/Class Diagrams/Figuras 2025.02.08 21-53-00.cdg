@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Figuras">
+  <ClassDiagramComponents>
+    <Class name="Cilindro" package="Figuras" visibility="public" xPosition="611.0" yPosition="261.0">
+      <Fields>
+        <Field name="radio" type="double" visibility="private"/>
+        <Field name="altura" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="radio"/>
+          <Argument type="double" name="altura"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularVolumen" returnType="double" visibility="public"/>
+        <Method name="calcularSuperficie" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Esfera" package="Figuras" visibility="public" xPosition="368.0" yPosition="271.0">
+      <Fields>
+        <Field name="radio" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="radio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularVolumen" returnType="double" visibility="public"/>
+        <Method name="calcularSuperficie" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FiguraGeométrica" package="Figuras" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="volumen" type="double" visibility="private"/>
+        <Field name="superficie" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setVolumen" returnType="void" visibility="public">
+          <Argument type="double" name="volumen"/>
+        </Method>
+        <Method name="setSuperficie" returnType="void" visibility="public">
+          <Argument type="double" name="superficie"/>
+        </Method>
+        <Method name="getVolumen" returnType="double" visibility="public"/>
+        <Method name="getSuperficie" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="Figuras" visibility="public" xPosition="948.0" yPosition="821.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Piramide" package="Figuras" visibility="public" xPosition="877.0" yPosition="261.0">
+      <Fields>
+        <Field name="base" type="double" visibility="private"/>
+        <Field name="altura" type="double" visibility="private"/>
+        <Field name="apotema" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="base"/>
+          <Argument type="double" name="altura"/>
+          <Argument type="double" name="apotema"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularVolumen" returnType="double" visibility="public"/>
+        <Method name="calcularSuperficie" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VentanaCilindro" package="Figuras" visibility="public" xPosition="601.0" yPosition="502.0">
+      <Fields>
+        <Field name="contenedor" type="Container" visibility="private"/>
+        <Field name="radio" type="JLabel" visibility="private"/>
+        <Field name="campoRadio" type="JTextField" visibility="private"/>
+        <Field name="calcular" type="JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="inicio" returnType="void" visibility="private"/>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaEsfera" package="Figuras" visibility="public" xPosition="328.0" yPosition="502.0">
+      <Fields>
+        <Field name="contenedor" type="Container" visibility="private"/>
+        <Field name="radio" type="JLabel" visibility="private"/>
+        <Field name="campoRadio" type="JTextField" visibility="private"/>
+        <Field name="calcular" type="JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="inicio" returnType="void" visibility="private"/>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="evento"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaPiramide" package="Figuras" visibility="public" xPosition="914.0" yPosition="502.0">
+      <Fields>
+        <Field name="contenedor" type="Container" visibility="private"/>
+        <Field name="base" type="JLabel" visibility="private"/>
+        <Field name="campoBase" type="JTextField" visibility="private"/>
+        <Field name="calcular" type="JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="inicio" returnType="void" visibility="private"/>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="evento"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VentanaPrincipal" package="Figuras" visibility="public" xPosition="601.0" yPosition="783.0">
+      <Fields>
+        <Field name="contenedor" type="Container" visibility="private"/>
+        <Field name="cilindro" type="JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="inicio" returnType="void" visibility="private"/>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="evento"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Figuras.Cilindro" target="Figuras.FiguraGeométrica"/>
+    <IsRelation name="is" source="Figuras.VentanaCilindro" target="Figuras.Cilindro"/>
+    <IsRelation name="is" source="Figuras.VentanaPiramide" target="Figuras.Piramide"/>
+    <IsRelation name="is" source="Figuras.Esfera" target="Figuras.FiguraGeométrica"/>
+    <HasRelation name="1" source="Figuras.Main" target="Figuras.VentanaPrincipal" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="1...1" source="Figuras.VentanaPrincipal" target="Figuras.VentanaCilindro"/>
+    <IsRelation name="is" source="Figuras.VentanaEsfera" target="Figuras.Esfera"/>
+    <IsRelation name="is" source="Figuras.Piramide" target="Figuras.FiguraGeométrica"/>
+    <HasRelation name="1" source="Figuras.VentanaPrincipal" target="Figuras.VentanaEsfera" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="1" source="Figuras.VentanaPrincipal" target="Figuras.VentanaPiramide" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
